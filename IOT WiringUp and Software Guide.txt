@@ -1,0 +1,121 @@
+Practical A: GPIO:Light the LED with Python
+
+Wiring up your Circuit:
+1. Connect the GPIO22 (i.e. Physical Pin 15) Pin od raspberry pi to one end of the resistor.
+2. Connect another end of resistor to the positive end (anode) of LED
+3. Connect the negative end (cathode) of LED to Ground of raspberry pi.
+4. Then Power on your raspberry pi
+
+Software Guide:
+Raspbian OS comes with many preinstalled programming environments. Here we will be using
+Python for coding.
+9 EDKITS ELECTRONICS
+To open Python, click on the application Menu, navigate to Programming, then click on Python 3
+(IDLE) an Integrated Development Environment for Python 3. After opening the IDE, go to files and
+open new file to start your code.
+
+
+
+
+
+Practical B: Displaying different LED Patterns with Raspberry Pi
+
+Wiring up your Circuit:
+We are using SPI protocol for wiring LED matrix module to raspberry pi, since it reduces the number
+pins required for wiring the circuit. You can follow the diagram given below while wiring your circuit.
+1. Connect the VCC pin of 7219 driver board to Pin2 of raspberry pi.
+2. Connect the Gnd pin of 7219 driver board to Pin6 of raspberry pi.
+3. Connect the DIN pin of 7219 driver board to Pin19 of raspberry pi.
+4. Connect the CS pin of 7219 driver board to Pin24 of raspberry pi.
+5. Lastly, connect the CLK Pin of 7 219 driver board to Pin23 of raspberry pi.
+
+
+
+
+
+Practical C: Displaying Time over 4 Digit 7 Segment Display using Raspberry Pi
+
+Wiring up your Circuit:
+Hook up your circuit as follows:
+1. Connect the Pin2 (5V) of Rpi to Vcc pin of Module
+2. Connect Pin 6 (GND) of Rpi to GND of Module
+3. Connect Pin38 (GPIO20) of Rpi to DIO of Module
+4. Lastly connect Pin 40 (GPIO21) of Rpi to CLK of Module
+
+Software Guide:
+1. Now to download libraries, open Web Browser on your Raspberry Pi and log on to the
+following link: https://github.com/timwaizenegger/raspberrypi -examples/tree/master/actor -led-7segment-4numbers. 
+Click on the actor-led-7segment-4numbers.zip folder and Now click on Download Button to download the file.
+2. Now on your rpi move to /home/pi/Downloads/ location to find the zip file downloaded.
+3. Unzip the file and try to execute the different example codes present in that folder in Python
+2 Idle.
+4. Now open Python 2 Idle, create a new file, write the code given below and save it in the
+same folder i.e. actor-led-7segment-4numbers since the code below is depended on
+tm1637.py file which is present in the same folder.
+
+
+
+
+
+Practical D: GPS Module Interfacing with Raspberry Pi
+
+Wiring up your Circuit:
+1. Connect the VCC Pin of GPS Module to 3.3V Pin of USB to TTL converter
+2. Connect the GND Pin of GPS Module to GND Pin of USB to TTL converter
+3. Connect the Tx Pin of GPS Module to Rx Pin of USB to TTL converter
+4. Connect the Rx Pin of GPS Module to Tx Pin of USB to TTL converter.
+5. Lastly connect the USB to TTL converter to USB port of Raspberry Pi.
+
+Software Guide: 
+GPS CMD COMMANDS TO RUN
+
+ls /dev/ttyUSB*
+ls /dev/ttyUSB0
+sudo cat /dev/ttyUSB*
+press ctrl+c 
+sudo apt-get update
+sudo apt-get install gpsd gpsd-clients python-gps
+sudo gpsd /dev/ttUSB0 -F /var/run/gpsd.sock
+cgps -s
+
+
+
+
+
+Practical E: Interfacing Raspberry Pi with Telegram App
+
+Steps:
+Step 1: Install Telegram on Your Phone, Obviously
+Step 2: Text /newbot to BotFather: To obtain a bot account, text him /newbot. (you need the slash '/' in front) He will then ask a couple of
+questions. I call my bot "Led”. You will see why in a few moments. But you can give it any name you want.
+At the end of process, you will be given a token, something like 123456789:ABCdefGhIJKlmNo-
+PQRsTUVwxyZ. This token represents the bot account. You are going to put this token on the Pi.
+Step 3: Install Telepot on Raspberry Pi: On the command line, run these two commands:
+sudo apt-get install python-pip
+sudo pip install telepot
+Step 4: Step 4: Test Token: In the Python interpreter, enter these three lines;
+import teleport
+bot = telepot.Bot('*** copy bot token from botfather ***')
+bot.getMe()
+Step 5: Python code?: will be given by clg.
+
+
+
+
+
+Practical F: RFID Module Interfacing with Raspberry Pi
+
+Wiring up your Circuit:
+1. Connect TX pin of Module to Rx Pin of USB to TTL converter
+2. Connect the GND Pin of Module to GND Pin of USB to TTL converter
+3. Connect the positive of 5V external supply to VCC pin of module.
+4. Connect the negative/GND of 5V external supply to GND of Module
+5. Finally connect the USB to TTL converter to USB of raspberry Pi
+6. Connect the green LED to Pin37 of raspberry Pi
+7. Connect the red LED to Pin35 of raspberry pi
+8. And connect the buzzer to Pin33 of raspberry Pi.
+
+Software Guide:
+After connecting the Module to raspberry pi via USB to TTL converter, check for the port number to
+which it is being connected by following command: ls /dev/ttyUSB*
+Now open Python 2 Idle and write the following code and test the working of RFID
